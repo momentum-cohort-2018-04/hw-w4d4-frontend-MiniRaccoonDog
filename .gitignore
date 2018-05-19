@@ -65,3 +65,9 @@ typings/
 # End of https://www.gitignore.io/api/node
 dist/
 .cache/
+test.json
+code_snippets.js
+Music Explorer_files
+Music Explorer.htm
+raccoondog_sq.jpg
+grid.css 
