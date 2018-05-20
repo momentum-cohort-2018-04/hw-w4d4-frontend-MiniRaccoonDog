@@ -7,7 +7,7 @@ var genres = (function () {
   $.ajax({
     'async': false,
     'global': false,
-    'url': 'https://api.myjson.com/bins/8kpky',
+    'url': 'https://api.myjson.com/bins/a8icy',
     'dataType': 'json',
     'success': function (data) {
       genres = data
@@ -21,6 +21,7 @@ console.log('page reloaded')
 
 $(document).ready(function () {
   genreMaker()
+  getTop()
   $('#search').submit(function (event) {
     event.preventDefault()
     // genreMaker()
@@ -42,35 +43,35 @@ $(document).ready(function () {
         albumSearch(searchterm)
         console.log('album called')
         break
-      // case 'genre':
-      //   console.log('genre called')
-      //   getTopGenre(searchterm)
-      //   break
+        // case 'genre':
+        //   console.log('genre called')
+        //   getTopGenre(searchterm)
+        //   break
     }
   })
+
   $('#hits').change(function (event) {
     event.preventDefault()
     const genreCode = $('#hits option:selected').val()
-    console.log(genreCode)
-    getTopGenre(genreCode)
+    if (genreCode === 'default') {} else {
+      getTopGenre(genreCode)
+    }
+  })
+  $('.icon').click(function (event) {
+    event.preventDefault()
   })
 })
 
 function basicSearch (query) {
-  request.get(URL + query + `&media=music&limit=15`)
-    // request.get(URL + query + `&entity=song&limit=15`)
+  request.get(URL + query + `&media=music&limit=30`)
     .then(function (response) {
       const responseObject = JSON.parse(response.text)
-      // console.log('result', responseObject)
-      // console.log('result', typeof (responseObject))
-      // console.log('result.results', responseObject.results)
-      // console.log('result', Array.isArray(responseObject.results))
       galleryHtml(responseObject.results)
     })
 }
 
 function artistSearch (query) {
-  request.get(URL + query + `&attribute=allArtistTerm&limit=15`)
+  request.get(URL + query + `&entity=song&attribute=allArtistTerm&limit=30`)
     .then(function (response) {
       const responseObject = JSON.parse(response.text)
       galleryHtml(responseObject.results)
@@ -92,9 +93,26 @@ function albumSearch (query) {
       .then(function (response) {
         const albumObject = JSON.parse(response.text)
         const albumArray = albumObject.results
-        galleryHtml(albumArray)
+        const albumSongs = albumArray.slice(1)
+        galleryHtml(albumSongs)
       })
   }, 100)
+}
+
+function genreMaker () {
+  console.log('genremade')
+  const subgenres = genres['34'].subgenres
+  const genreList = Array.from(Object.values(subgenres))
+  let genreDropHTML = []
+  for (var x = 0; x < genreList.length; x++) {
+    let entry = genreList[x]
+    let genreName = entry.name
+    let genreId = entry.id
+    genreDropHTML.push(
+      `<option value=${genreId}>${genreName}</option>`
+    )
+  }
+  $('#search__hits').html(genreDropHTML.join(''))
 }
 
 function galleryHtml (responseObject) {
@@ -117,24 +135,24 @@ function galleryHtml (responseObject) {
     )
   }
   $('.grid').html(htmlArray.join(''))
-
-  $('a,.artist_spot').click(function () {
+  $('a,.artist_spot').click(function (event) {
     event.preventDefault()
+    console.log('!')
     let songURL = this.id
     if ($(this).hasClass('expanded')) {
       $(this).removeClass('expanded')
       $(this).children('.arrow').removeClass('noarrow')
-    } else {
+    } else if ($(this).children().is('.arrow')) {
       $(this).addClass('expanded')
       $(this).children('.arrow').addClass('noarrow')
-    }
+    } else {}
     $('.dammit').attr('src', songURL)
     $('#musicplayer').trigger('load').trigger('play')
   })
 }
 
 function getTopGenre (x) {
-  request.get(`https://itunes.apple.com/us/rss/topsongs/limit=10/genre=${x}/json`)
+  request.get(`https://itunes.apple.com/us/rss/topsongs/limit=20/genre=${x}/json`)
     .then(function (response) {
       const responseObject = JSON.parse(response.text)
       let theArray = responseObject.feed.entry
@@ -148,6 +166,7 @@ function genreHtml (responsearray) {
     var entry = responsearray[x]
     let topArtistname = entry['im:artist'].label
     let topArtistId = entry.id.attributes['im:id']
+    let topAlbumName = entry['im:collection']['im:name'].label
     let topSongname = entry['im:name'].label
     let topImageUrl1 = entry['im:image']
     let topImageUrl2 = topImageUrl1[2].label
@@ -156,35 +175,41 @@ function genreHtml (responsearray) {
       `<a class="artist_spot" id=${topSRCsong} href="#">
           <img class="image thumb" src='${topImageUrl2}'>` +
       addDropArrow('h4', topSongname, 'title') +
-      // addDropArrow('h5', album, 'album') +
+      addDropArrow('h5', topAlbumName, 'album') +
       addDropArrow('h5', topArtistname, topArtistId) +
       `</a>`
     )
   }
   $('.grid').html(genreArray.join(''))
+  $('a,.artist_spot').click(function (event) {
+    event.preventDefault()
+    let songURL = this.id
+    if ($(this).hasClass('expanded')) {
+      $(this).removeClass('expanded')
+      $(this).children('.arrow').removeClass('noarrow')
+    } else if ($(this).children().is('.arrow')) {
+      $(this).addClass('expanded')
+      $(this).children('.arrow').addClass('noarrow')
+    } else {}
+    $('.dammit').attr('src', songURL)
+    $('#musicplayer').trigger('load').trigger('play')
+  })
 }
 
 function addDropArrow (heading, text, type) {
   var testlength = text.replace(/\W+/g, '')
-  if (testlength.length > 21) {
-    return `<${heading} class="arrow" name=${type}>${text}</${heading}>`
+  if (testlength.length > 20) {
+    return `<${heading} class="labels arrow" name=${type}>${text}</${heading}>`
   } else {
-    return `<${heading} class="" name=${type}>${text}</${heading}>`
+    return `<${heading} class="labels" name=${type}>${text}</${heading}>`
   }
 }
 
-function genreMaker () {
-  console.log('genremade')
-  const subgenres = genres['34'].subgenres
-  const genreList = Array.from(Object.values(subgenres))
-  let genreDropHTML = []
-  for (var x = 0; x < genreList.length; x++) {
-    let entry = genreList[x]
-    let genreName = entry.name
-    let genreId = entry.id
-    genreDropHTML.push(
-      `<option value=${genreId}>${genreName}</option>`
-    )
-  }
-  $('#search__hits').html(genreDropHTML.join(''))
+function getTop () {
+  request.get('https://itunes.apple.com/us/rss/topsongs/limit=24/json')
+    .then(function (response) {
+      const responseObject = JSON.parse(response.text)
+      let theArray = responseObject.feed.entry
+      genreHtml(theArray)
+    })
 }

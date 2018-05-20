@@ -6,37 +6,69 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Music Explorer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" media="screen" href="./style.scss" />
-  <script src="./script.js"></script>
+  <link rel="stylesheet" type="text/css" media="screen" href="./css/style.scss" />
+  <script src="./js/script.js"></script>
 </head>
 
 <body>
-  <content class="third third__top">
-    <audio class="audio" id="musicplayer" controls="controls">
-      <source class="dammit" src="https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview118/v4/2b/f2/ff/2bf2ffef-d49c-d4e6-8e46-26d5dbbbacdd/mzaf_5300972734873366727.plus.aac.p.m4a"> Your browser does not support the audio tag.
-    </audio>
-    
-  </content>
-  <content class="third third__middle">
-    <div class="center search">
-      <form class="hits__form" id="hits">
-        <select id="search__hits" class="hits" name="genretype">
-        </select>
-      </form>
-
-      <form class="search__form" id="search">
-        <select id="search__type" name="querytype">
-          <option value="search">Search</option>
-          <option value="artist">Artist</option>
-          <option value="album">Album</option>
-          <!-- <option value="genre">Genre</option> -->
-        </select>
-        <input type="text" class="search__bar" name="query" placeholder="Search here">
-      </form>
-      <button type="submit" class="search__button pure-button pure-button-primary" value="submit" form="search">Submit</button>
+  <content>
+    <div class="nav nav__top">
+      <div class="icon">
+        <ul>
+          <li class="icon__section">
+            <a class="icon-player"></a>
+          </li>
+        </ul>
+      </div>
+      <div class="text">
+        <ul>
+          <li>
+            <div class="player">
+              <audio class="audio" id="musicplayer" controls="controls">
+                <source class="dammit"> Your browser does not support the audio tag.
+              </audio>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="nav nav__bottom">
+      <div class="icon">
+        <ul>
+          <li class="icon__section">
+            <a class="icon-search"></a>
+          </li>
+        </ul>
+      </div>
+      <div class="text">
+        <ul>
+          <li>
+            <form class="search search__form" id="search">
+              <select class="search__dropdown" id="search__type" name="querytype">
+                <option value="search">Search</option>
+                <option value="artist">Artist</option>
+                <option value="album">Album</option>
+                <!-- <option value="genre">Genre</option> -->
+              </select>
+              <input type="text" class="search search__bar" name="query" placeholder="     Search here">
+            </form>
+            <button type="submit" class="search search__button pure-button pure-button-primary" value="submit" form="search">Submit</button>
+          </li>
+        </ul>
+      </div>
     </div>
   </content>
-  <content class="third third__bottom">
+
+
+  
+  <content class="section section__fixed">
+    <em class="section__hits">Not sure what to listen to? Use the dropdown to select a genre for the top 20 results </em>
+    <form class="hits__form" id="hits">
+      <select id="search__hits" class="hits" name="genretype">
+      </select>
+    </form>
+  </content>
+  <content class="contents">
     <div class="grid">
       <a class="artist_spot" id="https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview118/v4/b0/38/22/b03822b6-f59d-7541-24ec-876de0254b43/mzaf_6739111258026699895.plus.aac.p.m4a"
         href="#">
@@ -146,6 +178,7 @@
     </div>
     </div>
   </content>
+
 </body>
 
 </html>
