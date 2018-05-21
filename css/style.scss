@@ -69,12 +69,16 @@ body {
     }
   }
   &-player {
-    background-image: url("https://www.shareicon.net/data/64x64/2016/08/18/809278_multimedia_512x512.png");
+    // background-image: url("https://www.shareicon.net/data/64x64/2016/08/18/809278_multimedia_512x512.png");
+    // background-image: url("file:///Users/Spoonflower/Momentum/hw-w4d4-frontend-MiniRaccoonDog/images/iconmonstr-sound-wave-6-64.png");
+    background-image: url('https://iconmonstr.com/wp-content/g/gd/makefg.php?i=../assets/preview/2012/png/iconmonstr-sound-wave-6.png&r=255&g=255&b=255');
     background-size: contain;
     background-repeat: no-repeat; // "/images/iconmonstr-sound-wave-6-64.png")
   }
   &-search {
-    background-image: url("http://www.clker.com/cliparts/z/1/T/u/9/2/search-icon-md.png");
+    // background-image: url("http://www.clker.com/cliparts/z/1/T/u/9/2/search-icon-md.png");
+    background-image: url("https://iconmonstr.com/wp-content/g/gd/makefg.php?i=../assets/preview/2012/png/iconmonstr-magnifier-5.png&r=255&g=255&b=255");
+    // background-image: url("file:///Users/Spoonflower/Momentum/hw-w4d4-frontend-MiniRaccoonDog/images/iconmonstr-magnifier-5-64.png");
     background-size: contain;
     background-repeat: no-repeat;
   }
