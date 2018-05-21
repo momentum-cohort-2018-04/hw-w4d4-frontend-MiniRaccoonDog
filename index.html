@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Music Explorer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300|Work+Sans:700" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" media="screen" href="./css/style.scss" />
+  <script src="./js/script.js"></script>
+</head>
+
+<body>
+  <content class="section section__title">
+    iTunes Music Explorer
+  </content>
+  <content>
+    <div class="nav nav__top">
+      <div class="icon">
+        <ul>
+          <li class="icon__section">
+            <a class="icon-player"></a>
+          </li>
+        </ul>
+      </div>
+      <div class="text">
+        <ul>
+          <li>
+            <div class="player">
+              <audio class="audio" id="musicplayer" controls="controls">
+                <source class="dammit"> Your browser does not support the audio tag.
+              </audio>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="nav nav__bottom">
+      <div class="icon">
+        <ul>
+          <li class="icon__section">
+            <a class="icon-search"></a>
+          </li>
+        </ul>
+      </div>
+      <div class="text">
+        <ul>
+          <li>
+            <form class="search search__form" id="search">
+              <select class="search__dropdown" id="search__type" name="querytype">
+                <option value="search">Search</option>
+                <option value="artist">Artist</option>
+                <option value="album">Album</option>
+                <!-- <option value="genre">Genre</option> -->
+              </select>
+              <input type="text" class="search search__bar" name="query" placeholder="     Search here">
+            </form>
+            <button type="submit" class="search search__button pure-button pure-button-primary" value="submit" form="search">Submit</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </content>
+
+
+  
+  <content class="section section__fixed">
+    <em class="section__hits">Not sure what to listen to? Use the dropdown to select a genre for the top 20 results </em>
+    <form class="hits__form" id="hits">
+      <select id="search__hits" class="hits" name="genretype">
+      </select>
+    </form>
+  </content>
+  <content class="contents">
+    <div class="grid">
+      <a class="artist_spot" id="https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview118/v4/b0/38/22/b03822b6-f59d-7541-24ec-876de0254b43/mzaf_6739111258026699895.plus.aac.p.m4a"
+        href="#">
+        <img class="image thumb" src="https://is2-ssl.mzstatic.com/image/thumb/Music118/v4/f4/58/47/f4584702-bd77-52c3-f7e0-fa05f4e80397/source/100x100bb.jpg">
+        <div class="arrow">Make Me Fee627389102</div>
+        <h4 class="one_line">Dirty Computer</h4>
+        <h5 class="one_line" id="140777342">Janelle Monáe</h5>
+      </a>
+      <a class="artist_spot" id="https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview128/v4/8f/ee/f2/8feef28d-e773-58e3-4c56-12d1ce170215/mzaf_4116148735997098411.plus.aac.p.m4a"
+        href="#">
+        <img class="image thumb" src="https://is2-ssl.mzstatic.com/image/thumb/Music118/v4/f4/58/47/f4584702-bd77-52c3-f7e0-fa05f4e80397/source/100x100bb.jpg">
+        <h4 class="one_line">Django Jane</h4>
+        <h4 class="one_line">Dirty Computer</h4>
+        <h5 class="one_line" id="140777342">Janelle Monáe</h5>
+      </a>
+      <a class="artist_spot" id="https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview118/v4/2b/f2/ff/2bf2ffef-d49c-d4e6-8e46-26d5dbbbacdd/mzaf_5300972734873366727.plus.aac.p.m4a"
+        href="#">
+        <img class="image thumb" src="https://is2-ssl.mzstatic.com/image/thumb/Music118/v4/f4/58/47/f4584702-bd77-52c3-f7e0-fa05f4e80397/source/100x100bb.jpg">
+        <h4 class="one_line">Pynk (feat. Grimes)</h4>
+        <h4 class="one_line">Dirty Computer</h4>
+        <h5 class="one_line" id="140777342">Janelle Monáe</h5>
+      </a>
+      <a class="artist_spot" id="https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/Music5/v4/fc/5f/87/fc5f87ac-fe74-9a1b-8d13-fa841958719e/mzaf_3826563292485262357.plus.aac.p.m4a"
+        href="#">
+        <img class="image thumb" src="https://is1-ssl.mzstatic.com/image/thumb/Music5/v4/87/2a/d0/872ad0b1-f3f2-5807-d7a4-6fbb0bacbdd7/source/100x100bb.jpg">
+        <h4 class="one_line">Yoga</h4>
+        <h4 class="one_line">Wondaland Presents: The Eephus - EP</h4>
+        <h5 class="one_line" id="140777342">Janelle Monáe &amp; Jidenna</h5>
+      </a>
+      <a class="artist_spot" id="https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview118/v4/ee/d6/de/eed6deca-9b61-e487-2c72-9921bde6ac18/mzaf_5678658077803639936.plus.aac.p.m4a"
+        href="#">
+        <img class="image thumb" src="https://is2-ssl.mzstatic.com/image/thumb/Music118/v4/f4/58/47/f4584702-bd77-52c3-f7e0-fa05f4e80397/source/100x100bb.jpg">
+        <h4 class="one_line">I Like That</h4>
+        <h4 class="one_line">Dirty Computer</h4>
+        <h5 class="one_line" id="140777342">Janelle Monáe</h5>
+      </a>
+      <a class="artist_spot" id="https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/Music6/v4/46/79/40/467940e7-194d-614a-25a4-97797b4de782/mzaf_211642770755533910.plus.aac.p.m4a"
+        href="#">
+        <img class="image thumb" src="https://is5-ssl.mzstatic.com/image/thumb/Music/v4/63/bf/f4/63bff401-07ff-5eb4-3be6-a71940f6199e/source/100x100bb.jpg">
+        <h4 class="one_line">Q.U.E.E.N. (feat. Erykah Badu)</h4>
+        <h4 class="one_line">The Electric Lady</h4>
+        <h5 class="one_line" id="140777342">Janelle Monáe</h5>
+      </a>
+      <a class="artist_spot" id="https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/Music/3c/98/65/mzm.djfdpyli.aac.p.m4a"
+        href="#">
+        <img class="image thumb" src="https://is4-ssl.mzstatic.com/image/thumb/Music/v4/f6/4a/0c/f64a0ca8-a00c-ab1d-c96d-5138a26f4f84/source/100x100bb.jpg">
+        <h4 class="one_line">Tightrope (feat. Big Boi)</h4>
+        <h4 class="one_line">The ArchAndroid</h4>
+        <h5 class="one_line" id="140777342">Janelle Monáe</h5>
+      </a>
+      <a class="artist_spot" id="https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/Music/v4/f3/a1/05/f3a10590-2bd7-84e9-f259-d35a1c8bfd9b/mzaf_6768623558175158565.plus.aac.p.m4a"
+        href="#">
+        <img class="image thumb" src="https://is5-ssl.mzstatic.com/image/thumb/Music/v4/63/bf/f4/63bff401-07ff-5eb4-3be6-a71940f6199e/source/100x100bb.jpg">
+        <h4 class="one_line">Electric Lady (feat. Solange)</h4>
+        <h4 class="one_line">The Electric Lady</h4>
+        <h5 class="one_line" id="140777342">Janelle Monáe</h5>
+      </a>
+      <a class="artist_spot" id="https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/Music/v4/b1/46/4c/b1464cbf-b2ba-54c2-5f48-add8002c386c/mzaf_1023949333481597711.plus.aac.p.m4a"
+        href="#">
+        <img class="image thumb" src="https://is5-ssl.mzstatic.com/image/thumb/Music/v4/63/bf/f4/63bff401-07ff-5eb4-3be6-a71940f6199e/source/100x100bb.jpg">
+        <h4 class="one_line">PrimeTime (feat. Miguel)</h4>
+        <h4 class="one_line">The Electric Lady</h4>
+        <h5 class="one_line" id="140777342">Janelle Monáe</h5>
+      </a>
+      <a class="artist_spot" id="https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview118/v4/75/a6/e2/75a6e25b-b16d-8972-a7dc-8d4698a74f9b/mzaf_157110137447606072.plus.aac.p.m4a"
+        href="#">
+        <img class="image thumb" src="https://is2-ssl.mzstatic.com/image/thumb/Music118/v4/f4/58/47/f4584702-bd77-52c3-f7e0-fa05f4e80397/source/100x100bb.jpg">
+        <h4 class="one_line">I Got The Juice (feat. Pharrell Williams)</h4>
+        <h4 class="one_line">Dirty Computer</h4>
+        <h5 class="one_line" id="140777342">Janelle Monáe</h5>
+      </a>
+      <a class="artist_spot" id="https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/Music/v4/87/20/4d/87204d8f-e2e4-b6dc-6573-babf08a2aed0/mzaf_6973579745775989395.plus.aac.p.m4a"
+        href="#">
+        <img class="image thumb" src="https://is5-ssl.mzstatic.com/image/thumb/Music/v4/63/bf/f4/63bff401-07ff-5eb4-3be6-a71940f6199e/source/100x100bb.jpg">
+        <h4 class="one_line">Dance Apocalyptic</h4>
+        <h4 class="one_line">The Electric Lady</h4>
+        <h5 class="one_line" id="140777342">Janelle Monáe</h5>
+      </a>
+      <a class="artist_spot" id="https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/Music69/v4/51/b7/27/51b7278d-98dc-eb82-22f8-f39d1591b246/mzaf_2319604683471973593.plus.aac.p.m4a"
+        href="#">
+        <img class="image thumb" src="https://is4-ssl.mzstatic.com/image/thumb/Music60/v4/aa/64/73/aa6473a5-e287-221a-d68e-dbc6ff57568c/source/100x100bb.jpg">
+        <h4 class="one_line">This Is for My Girls</h4>
+        <h4 class="one_line">This Is for My Girls - Single</h4>
+        <h5 class="one_line" id="316265">Kelly Clarkson, Chloe x Halle, Missy Elliott, Jadagrace, Lea Michele, Janelle Monáe, Kelly Rowland &amp; Zendaya</h5>
+      </a>
+      <a class="artist_spot" id="https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/Music4/v4/68/0c/6d/680c6df7-0618-5de1-5a32-9b93f362a2f9/mzaf_8336164589128043391.plus.aac.p.m4a"
+        href="#">
+        <img class="image thumb" src="https://is5-ssl.mzstatic.com/image/thumb/Music/v4/63/bf/f4/63bff401-07ff-5eb4-3be6-a71940f6199e/source/100x100bb.jpg">
+        <h4 class="one_line">Givin Em What They Love (feat. Prince)</h4>
+        <h4 class="one_line">The Electric Lady</h4>
+        <h5 class="one_line" id="140777342">Janelle Monáe</h5>
+      </a>
+      <a class="artist_spot" id="https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/Music/v4/d9/6c/81/d96c81e2-767f-a3d5-d3c4-3c4be765b5fb/mzaf_7502333083597065165.plus.aac.p.m4a"
+        href="#">
+        <img class="image thumb" src="https://is5-ssl.mzstatic.com/image/thumb/Music/v4/63/bf/f4/63bff401-07ff-5eb4-3be6-a71940f6199e/source/100x100bb.jpg">
+        <h4 class="one_line">Sally Ride</h4>
+        <h4 class="one_line">The Electric Lady</h4>
+        <h5 class="one_line" id="140777342">Janelle Monáe</h5>
+      </a>
+      <a class="artist_spot" id="https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/Music6/v4/f4/f5/86/f4f58604-d3a2-86bd-07cd-64452b151f59/mzaf_4061302896721547374.plus.aac.p.m4a"
+        href="#">
+        <img class="image thumb" src="https://is5-ssl.mzstatic.com/image/thumb/Music/v4/63/bf/f4/63bff401-07ff-5eb4-3be6-a71940f6199e/source/100x100bb.jpg">
+        <h4 class="one_line">Suite IV: Electric Overture</h4>
+        <h4 class="one_line">The Electric Lady</h4>
+        <h5 class="one_line" id="140777342">Janelle Monáe</h5>
+      </a>
+    </div>
+    </div>
+  </content>
+
+</body>
+
+</html>

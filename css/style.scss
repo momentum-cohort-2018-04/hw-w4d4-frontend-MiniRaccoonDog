@@ -1,0 +1,207 @@
+* {
+  padding: 0 0;
+  margin: 0;
+  font-size: 18px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  width: 90%;
+  margin: 2rem auto;
+  padding-left: 4%;
+  background-color: hsla(204, 100%, 95%, .20);
+}
+
+.section {
+  margin: .5rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  // background-color: hsla(187, 52%, 61%, 1);
+  &__title{
+    // background-color: hsla(187, 32%, 41%, 1);
+    background: hsla(204, 100%, 10%, 1);
+    font-size: 4rem;
+    font-family: 'Work Sans', sans-serif;
+    border-radius: .5rem;
+    color:white;
+  }
+  &__hits {
+    font-size: 1rem;
+    color: grey;
+  }
+}
+
+.nav {
+  width: 50%;
+  position: fixed;
+  left: 0;
+  z-index: 1000; 
+  &__top {
+    top: 35px;
+  }
+  &__bottom {
+    top: 110px;
+  }
+}
+
+.icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 990;
+  height: 100%;
+  background: hsla(204, 100%, 10%, 1);
+  // background: hsla(187, 32%, 41%, 1);
+  &__section {
+    // border-bottom:1px solid hsla(0,0%,0%,.3);
+    list-style-type: none;
+    padding: .5rem .4rem;
+  }
+  & a {
+    display: block;
+    width: 70px;
+    height: 64px;
+    transition: all .5s ease-out;
+    &:hover {
+      transform: translateX(10px) scale(1.2)
+    }
+  }
+  &-player {
+    // background-image: url("https://www.shareicon.net/data/64x64/2016/08/18/809278_multimedia_512x512.png");
+    // background-image: url("file:///Users/Spoonflower/Momentum/hw-w4d4-frontend-MiniRaccoonDog/images/iconmonstr-sound-wave-6-64.png");
+    background-image: url('https://iconmonstr.com/wp-content/g/gd/makefg.php?i=../assets/preview/2012/png/iconmonstr-sound-wave-6.png&r=255&g=255&b=255');
+    background-size: contain;
+    background-repeat: no-repeat; // "/images/iconmonstr-sound-wave-6-64.png")
+  }
+  &-search {
+    // background-image: url("http://www.clker.com/cliparts/z/1/T/u/9/2/search-icon-md.png");
+    background-image: url("https://iconmonstr.com/wp-content/g/gd/makefg.php?i=../assets/preview/2012/png/iconmonstr-magnifier-5.png&r=255&g=255&b=255");
+    // background-image: url("file:///Users/Spoonflower/Momentum/hw-w4d4-frontend-MiniRaccoonDog/images/iconmonstr-magnifier-5-64.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+
+.text {
+  left: 70px;
+  position: relative;
+  width: 100%;
+  z-index: 980;
+  line-height: 64px;
+  height: 80px;
+  background: hsla(204, 100%, 10%, 1);
+  // background: hsla(187, 32%, 41%, .85);
+  transition: transform .24s linear;
+  transform-origin: left;
+  transform: perspective(1000px) rotateY(90deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 1rem 1rem 0;
+  & ul {
+    width: 100%;
+    margin: 0 auto;
+  }
+  & li {
+    display: flex;
+    padding-left: 2rem; // border-bottom:1px solid hsla(0,0%,0%,.3);
+    list-style-type: none;
+    width: 100%;
+  }
+}
+
+.nav:hover .text {
+  transform: rotateY(0deg)
+}
+// .icon:hover .text {
+//   transform: rotateY(0deg)
+// }
+.search {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  width: 70%;
+  height: 2rem;
+  &__dropdown {
+    width: 6rem;
+    margin-right: 1rem;
+  }
+  &__button {
+    width: 6rem;
+    margin-left: 0;
+    border-radius: .5rem;
+  }
+}
+.player{
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  width:90%;
+}
+.audio{
+  width:90%;
+}
+.hits {
+  //the button
+  font-size: 1.2rem;
+  padding-left: 1rem;
+  margin-left: 1rem;
+  color: grey;
+  width: 12rem;
+}
+
+.grid {
+  background: white;
+  padding-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center;
+  border-radius: 1rem;
+}
+
+.artist_spot {
+  text-align: center;
+  align-items: center;
+  margin: 1.5rem .5rem 0 .5rem;
+  display: flex;
+  // flex: 15%;
+  width: 15%;
+  flex-direction: column;
+  border-radius: 1rem;
+  padding-top: .5rem;
+}
+
+.thumb {
+  width: 90%;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 1rem;
+}
+
+.arrow {
+  padding-left: 1.5rem;
+  background-position: left;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(data:image/png;base64,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); // background-image: url(file:///Users/Spoonflower/Momentum/hw-w4d4-frontend-MiniRaccoonDog/bottom.svg)
+  height: 1.2rem;
+  overflow: hidden;
+}
+.noarrow {
+  padding-left: 0;
+  background-image: none;
+  overflow: visible;
+  height: auto;
+}
+
+.expanded {
+  height: 20rem;
+  overflow: visible;
+  background: hsla(0, 0%, 95%, .5);
+  * {
+    overflow: visible;
+  }
+}
