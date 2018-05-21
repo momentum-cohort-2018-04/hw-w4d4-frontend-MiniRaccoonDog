@@ -24,7 +24,6 @@ $(document).ready(function () {
   getTop()
   $('#search').submit(function (event) {
     event.preventDefault()
-    // genreMaker()
     const tent = $(this).serializeArray()
     this.reset()
     const querytype = tent[0].value
@@ -43,10 +42,6 @@ $(document).ready(function () {
         albumSearch(searchterm)
         console.log('album called')
         break
-        // case 'genre':
-        //   console.log('genre called')
-        //   getTopGenre(searchterm)
-        //   break
     }
   })
 

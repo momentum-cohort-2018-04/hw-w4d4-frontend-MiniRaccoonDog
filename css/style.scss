@@ -1,13 +1,15 @@
 * {
   padding: 0 0;
   margin: 0;
-  font-size: 18px; // border: turquoise dotted 1px;
+  font-size: 18px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 body {
   width: 90%;
   margin: 2rem auto;
-  padding-left: 8%;
+  padding-left: 4%;
+  background-color: hsla(204, 100%, 95%, .20);
 }
 
 .section {
@@ -15,24 +17,29 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  &__fixed {
-    margin-top: 2rem;
-    align-items: center;
-    // background-color: whitesmoke;
+  text-align: center;
+  // background-color: hsla(187, 52%, 61%, 1);
+  &__title{
+    // background-color: hsla(187, 32%, 41%, 1);
+    background: hsla(204, 100%, 10%, 1);
+    font-size: 4rem;
+    font-family: 'Work Sans', sans-serif;
+    border-radius: .5rem;
+    color:white;
   }
   &__hits {
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: grey;
   }
 }
 
 .nav {
-  width: 80%;
+  width: 50%;
   position: fixed;
   left: 0;
   z-index: 1000; 
   &__top {
-    top: 30px;
+    top: 35px;
   }
   &__bottom {
     top: 110px;
@@ -45,7 +52,8 @@ body {
   top: 0;
   z-index: 990;
   height: 100%;
-  background: hsla(0, 0%, 15%, 1);
+  background: hsla(204, 100%, 10%, 1);
+  // background: hsla(187, 32%, 41%, 1);
   &__section {
     // border-bottom:1px solid hsla(0,0%,0%,.3);
     list-style-type: none;
@@ -79,15 +87,17 @@ body {
   z-index: 980;
   line-height: 64px;
   height: 80px;
-  background: hsla(0, 0%, 15%, 1);
+  background: hsla(204, 100%, 10%, 1);
+  // background: hsla(187, 32%, 41%, .85);
   transition: transform .24s linear;
   transform-origin: left;
   transform: perspective(1000px) rotateY(90deg);
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 0 1rem 1rem 0;
   & ul {
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
   }
   & li {
@@ -101,13 +111,15 @@ body {
 .nav:hover .text {
   transform: rotateY(0deg)
 }
-
+// .icon:hover .text {
+//   transform: rotateY(0deg)
+// }
 .search {
   justify-content: center;
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  width: 80%;
+  width: 70%;
   height: 2rem;
   &__dropdown {
     width: 6rem;
@@ -138,9 +150,12 @@ body {
 }
 
 .grid {
+  background: white;
+  padding-bottom: 1rem;
   display: flex;
-  flex-wrap: wrap; // align-content: stretch;
-  justify-content: center; // align-items: flex-start;
+  flex-wrap: wrap; 
+  justify-content: center;
+  border-radius: 1rem;
 }
 
 .artist_spot {
@@ -151,6 +166,8 @@ body {
   // flex: 15%;
   width: 15%;
   flex-direction: column;
+  border-radius: 1rem;
+  padding-top: .5rem;
 }
 
 .thumb {
@@ -169,7 +186,6 @@ body {
   height: 1.2rem;
   overflow: hidden;
 }
-
 .noarrow {
   padding-left: 0;
   background-image: none;
@@ -180,6 +196,7 @@ body {
 .expanded {
   height: 20rem;
   overflow: visible;
+  background: hsla(0, 0%, 95%, .5);
   * {
     overflow: visible;
   }
